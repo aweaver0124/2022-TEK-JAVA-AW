@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title id="page-title">This is the title</title>
 
     <!-- <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.2.2/dist/css/boostrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbncCeuOxjzrPF/et3URy9Bv1WTR1" crossorigin="anonymous"> -->
     
 </head>
+
+<style>
+    #items{
+        background-color: aquamarine;
+    }
+</style>
 
 
 <body>
@@ -24,22 +30,46 @@
      <li name="list-group-item">Item 2</li>
      <li name="list-group-item">Item 3</li>
     </ul>
+
+    <form>
+        <input type="text" name="email" id="emailId">
+    </form>
 </body>
 
 <script>
+    // get elements by ID examples
     var header = document.getElementById("header-title");
     var list = document.getElementById("items");
     // console.log(header);
     // console.log(list);
 
+    // get elements by name example
     var items = document.getElementsByName("list-group-item");
     // for (i in items){
     //     console.log(items[i]);
     // }
 
+    // get elementd by tag name example
     var divs = document.getElementsByTagName("div");
-    for(div in divs){
-        console.log(divs[div]);
+    // for(div in divs){
+    //     console.log(divs[div].innerHTML);
+    // }
+
+    // basic dom manipulation example
+    // console.log(document.title);
+    // document.title = "New title here";
+    // console.log(document.title);
+
+    // let title = document.getElementById("page-title");
+    // console.log(title);
+    // console.log(title.innerHTML);
+    // title.innerHTML = title.innerHTML + " added with JS";
+
+    document.getElementById("header-title").classList.add("class");
+
+    var consoleLogClass = document.getElementsByClassName("class");
+    for(item in consoleLogClass){
+        console.log(consoleLogClass[item].innerHTML);
     }
 
 </script>
