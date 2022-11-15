@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event Examples</h1>
+
+    <ul id="unordered-list">
+        <li>Item 1</li>
+        <li id="delMe">Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <button onClick=clickMe()>Summon</button>
+    <button id="event-handler"> using event handler </button>
+
+    <script>
+
+        function clickMe(){
+            let list = document.getElementById('unordered-list');
+            let newElement = document.createElement("li");
+            newElement.classList.add("summoned");
+            newElement.innerHTML = "I've been summoned";
+            list.appendChild(newElement);
+        }
+
+        function eventHandler(){
+            let kist2 = document.getElementById("unordered-list");
+            let element = document.createElement("li");
+            element.innerHTML = "New event handler element";
+            kist2.appendChild(element);
+        }
+
+        let eh = document.getElementById("event-handler");
+        eh.addEventListener('mouseenter', eventHandler);
+
+    
+
+        // let para = document.createElement('p');
+        // para.innerHTML = "This is a new paragraph";
+        // document.body.appendChild(para);
+
+      
+
+        // var removeListItems = document.querySelector(ul);
+        // removeListItems.removeChild("#delMe");
+    </script>
+    
+</body>
+</html>
